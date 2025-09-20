@@ -35,6 +35,9 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
         }
 
         .hero-card {
@@ -77,6 +80,7 @@
             padding: 30px 0;
             background: transparent;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .screenshots-section::-webkit-scrollbar {
@@ -104,6 +108,8 @@
             min-width: max-content;
             justify-content: center;
             overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
         .screenshot-card {
@@ -167,6 +173,9 @@
             padding: 60px 0;
             text-align: center;
             border-top: 1px solid #e2e8f0;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
         }
 
         .app-store-badge {
@@ -192,35 +201,177 @@
             border-top: 1px solid #e2e8f0;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
+        /* Responsive Design */
+        
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
             }
-
+            
+            .screenshots-grid {
+                padding: 40px 20px;
+            }
+            
+            .screenshot-img {
+                width: 240px;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+        
+        /* Tablet */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 30px 0;
+            }
+            
+            .hero-title {
+                font-size: 1.3rem;
+            }
+            
             .hero-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .app-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .screenshots-grid {
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .screenshot-img {
+                width: 180px;
+            }
+            
+            .download-section {
+                padding: 40px 0;
+            }
+        }
+        
+        /* Mobile Large */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 25px 0;
+            }
+            
+            .hero-title {
+                font-size: 1.2rem;
+                margin-bottom: 6px;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .app-icon {
+                width: 35px;
+                height: 35px;
+                margin-bottom: 6px;
+            }
+            
+            .screenshots-section {
+                padding: 20px 0;
+            }
+            
+            .screenshots-grid {
+                gap: 12px;
+                padding: 10px;
+                justify-content: flex-start;
+            }
+            
+            .screenshot-img {
+                width: 160px;
+            }
+            
+            .download-section {
+                padding: 30px 0;
+            }
+            
+            .app-store-badge img {
+                height: 50px;
+            }
+            
+            .footer {
+                padding: 20px 0;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Mobile Small */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .hero {
+                padding: 20px 0;
+            }
+            
+            .hero-card {
+                padding: 10px;
+            }
+            
+            .hero-title {
                 font-size: 1.1rem;
             }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
+            
+            .hero-subtitle {
+                font-size: 0.7rem;
             }
-
+            
+            .app-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
             .screenshots-grid {
-                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 8px;
             }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            
+            .screenshot-img {
+                width: 140px;
             }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 20px;
+            
+            .download-section {
+                padding: 25px 0;
             }
-
-            .screenshot-image {
-                width: 200px;
+            
+            .app-store-badge img {
+                height: 45px;
+            }
+        }
+        
+        /* Mobile Extra Small */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.65rem;
+            }
+            
+            .screenshot-img {
+                width: 120px;
+            }
+            
+            .app-store-badge img {
+                height: 40px;
             }
         }
 
