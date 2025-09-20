@@ -1,87 +1,38 @@
-# TinyHabitsDaily Website
+# TinyHabitsDaily
 
-A beautiful landing page for the TinyHabitsDaily iOS app - showcasing tiny steps for massive results in habit formation.
+**Transform your life with tiny habits that create massive results.**
 
-## 🚀 Live Website
+TinyHabitsDaily is a science-backed iOS app that helps you build lasting habits through small, manageable steps. Based on proven behavioral psychology, our app makes habit formation simple, sustainable, and successful.
 
-Visit: [https://tinyhabitsdaily.app](https://tinyhabitsdaily.app)
+## 🌟 Why TinyHabitsDaily?
 
-## 📱 Features
+- **Science-Based Approach**: Built on proven behavioral psychology principles
+- **Tiny Steps, Big Results**: Start small and build momentum naturally
+- **AI-Powered Insights**: Get personalized recommendations and coaching
+- **Beautiful Design**: Clean, intuitive interface that motivates daily use
+- **Habit Tracking**: Monitor your progress with detailed analytics
 
-- Responsive design optimized for all devices
-- Interactive screenshot gallery
-- Smooth animations and transitions
-- App Store download integration
-- Modern, clean UI following iOS design principles
+## 📱 Download Now
 
-## 🛠 Deployment
+[**Download on the App Store**](https://apps.apple.com/app/tinyhabitsdaily)
 
-This website is automatically deployed to GitHub Pages using GitHub Actions.
+Transform your daily routine and achieve your goals, one tiny habit at a time.
 
-### GitHub Pages Setup
+## 🎯 Features
 
-1. The site deploys automatically from the `main` branch
-2. Custom domain configured via `CNAME` file
-3. GitHub Actions workflow handles the deployment process
+✅ **Smart Habit Builder** - Create habits that stick with our guided setup  
+✅ **Daily Coaching** - AI-powered tips and motivation  
+✅ **Progress Analytics** - Visualize your habit streaks and improvements  
+✅ **Flexible Scheduling** - Adapt habits to your lifestyle  
+✅ **Celebration System** - Acknowledge wins and build positive momentum  
 
-### DNS Configuration (Porkbun)
+## 🌐 Learn More
 
-To route your custom domain through Porkbun:
+Visit our website: [https://tinyhabitsdaily.app](https://tinyhabitsdaily.app)
 
-1. **A Records** (for apex domain):
-   ```
-   Type: A
-   Host: @
-   Answer: 185.199.108.153
-   
-   Type: A
-   Host: @
-   Answer: 185.199.109.153
-   
-   Type: A
-   Host: @
-   Answer: 185.199.110.153
-   
-   Type: A
-   Host: @
-   Answer: 185.199.111.153
-   ```
+---
 
-2. **CNAME Record** (for www subdomain):
-   ```
-   Type: CNAME
-   Host: www
-   Answer: tinyhabitsdaily.github.io
-   ```
-
-## 📁 Project Structure
-
-```
-├── index.html              # Main landing page
-├── CNAME                   # Custom domain configuration
-├── Screenshots/            # App screenshots
-│   └── AppStore/          # App Store optimized images
-├── TinyHabitsDaily/       # App assets
-│   └── Assets.xcassets/   # App icon and assets
-└── .github/
-    └── workflows/
-        └── deploy.yml     # GitHub Actions deployment
-```
-
-## 🔧 Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/tinyhabitsdaily/tinyhabitsdaily.git
-   cd tinyhabitsdaily
-   ```
-
-2. Open `index.html` in your browser or use a local server:
-   ```bash
-   python -m http.server 8000
-   # or
-   npx serve .
-   ```
+*Start your transformation today. Small changes, extraordinary results.*
 
 ## 📝 License
 
