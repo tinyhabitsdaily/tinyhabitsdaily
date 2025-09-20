@@ -4,7 +4,7 @@ A beautiful landing page for the TinyHabitsDaily iOS app - showcasing tiny steps
 
 ## 🚀 Live Website
 
-Visit: [https://tinyhabitsdaily.com](https://tinyhabitsdaily.com)
+Visit: [https://tinyhabitsdaily.app](https://tinyhabitsdaily.app)
 
 ## 📱 Features
 
