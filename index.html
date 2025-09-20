@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyHabitsDaily - Science-Backed Habit Tracking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #5b7cff 0%, #6b82ff 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card {
+            background: transparent;
+            border-radius: 0;
+            padding: 15px 15px;
+            display: inline-block;
+            box-shadow: none;
+            border: none;
+        }
+
+        .app-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            margin: 0 auto 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+
+        /* Screenshots Section */
+        .screenshots-section {
+            padding: 30px 0;
+            background: transparent;
+            overflow-x: auto;
+        }
+
+        .screenshots-section::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-section::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .screenshots-section::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .screenshots-section::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        .screenshots-grid {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            min-width: max-content;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        .screenshot-card {
+            flex: 0 0 auto;
+            width: auto;
+            height: auto;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-img {
+            width: 220px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: floatIn 0.8s ease-out forwards;
+        }
+
+        .screenshot-img:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .screenshot-card:nth-child(1) .screenshot-img { animation-delay: 0.1s; }
+        .screenshot-card:nth-child(2) .screenshot-img { animation-delay: 0.2s; }
+        .screenshot-card:nth-child(3) .screenshot-img { animation-delay: 0.3s; }
+        .screenshot-card:nth-child(4) .screenshot-img { animation-delay: 0.4s; }
+        .screenshot-card:nth-child(5) .screenshot-img { animation-delay: 0.5s; }
+        .screenshot-card:nth-child(6) .screenshot-img { animation-delay: 0.6s; }
+        .screenshot-card:nth-child(7) .screenshot-img { animation-delay: 0.7s; }
+        .screenshot-card:nth-child(8) .screenshot-img { animation-delay: 0.8s; }
+
+
+
+        /* Download Section */
+        .download-section {
+            background: #f8fafc;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .app-store-badge img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8fafc;
+            color: #666;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .screenshot-image {
+                width: 200px;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        
+        <div class="container">
+            <div class="hero-card fade-in">
+                <img src="TinyHabitsDaily/Assets.xcassets/AppIcon.appiconset/AppIcon.png" alt="TinyHabitsDaily App Icon" class="app-icon">
+                <h1 class="hero-title">TinyHabitsDaily</h1>
+                <p class="hero-subtitle">Tiny Steps Massive Results</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots-section">
+        <div class="screenshots-grid">
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/Today_screenshot.png" alt="Today Screen" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/GoodHabits.png" alt="Good Habits" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/BadHabits.png" alt="Bad Habits" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/HabitCoach.png" alt="Habit Coach" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/AIInsights.png" alt="AI Insights" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/Stats.png" alt="Statistics" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/Focus.png" alt="Focus Timer" class="screenshot-img">
+            </div>
+            
+            <div class="screenshot-card fade-in">
+                <img src="Screenshots/AppStore/Calendar.png" alt="Calendar" class="screenshot-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <a href="#" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TinyHabitsDaily. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
