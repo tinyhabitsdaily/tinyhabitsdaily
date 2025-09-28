@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TinyHabitsDaily</title>
+    <meta name="description" content="TinyHabitsDaily Privacy Policy - Learn how we protect your data and privacy while helping you build better habits.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -20,7 +21,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -29,19 +30,126 @@
         .header {
             background: linear-gradient(135deg, #5b7cff 0%, #6b82ff 100%);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+        }
+
+        /* Breadcrumb - NEW */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb a {
+            color: #5b7cff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #666;
+            margin: 0 8px;
+        }
+
+        /* Table of Contents - NEW */
+        .toc-section {
+            background: #f8fafc;
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .toc-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-column li {
+            margin-bottom: 8px;
+        }
+
+        .toc-column a {
+            color: #5b7cff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc-column a:hover {
+            color: #4c63d2;
+            text-decoration: underline;
+        }
+
+        /* Quick Summary - NEW */
+        .quick-summary {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border-left: 6px solid #5b7cff;
+        }
+
+        .quick-summary h3 {
+            color: #5b7cff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .quick-summary h3::before {
+            content: "🔒";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .summary-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .summary-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .summary-point::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 2px;
         }
 
         /* Content */
@@ -51,23 +159,72 @@
 
         .last-updated {
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 12px;
             margin-bottom: 40px;
             border-left: 4px solid #5b7cff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .last-updated::before {
+            content: "📅";
+            font-size: 1.5rem;
         }
 
         .last-updated strong {
             color: #5b7cff;
         }
 
-        h2 {
+        /* Collapsible Sections - NEW */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 20px 0;
+            border-bottom: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            background: #f8fafc;
+            margin: 0 -20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .section-header h2 {
             font-size: 1.8rem;
             font-weight: 600;
-            margin: 40px 0 20px 0;
+            margin: 0;
             color: #1a202c;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+        }
+
+        .section-toggle {
+            font-size: 1.5rem;
+            color: #5b7cff;
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .section-content.expanded {
+            max-height: 2000px;
+            padding: 20px 0;
+        }
+
+        .section-content.expanded.large {
+            max-height: 4000px;
+        }
+
+        .section-toggle.rotated {
+            transform: rotate(180deg);
         }
 
         h3 {
@@ -75,6 +232,15 @@
             font-weight: 600;
             margin: 30px 0 15px 0;
             color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3::before {
+            content: "▸";
+            color: #5b7cff;
+            font-size: 0.9rem;
         }
 
         p {
@@ -89,45 +255,98 @@
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.6;
         }
 
+        li strong {
+            color: #1a202c;
+        }
+
+        /* Contact Info */
         .contact-info {
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            padding: 40px;
+            border-radius: 16px;
             margin: 40px 0;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #d6e4ff;
         }
 
         .contact-info h3 {
             margin-top: 0;
             color: #5b7cff;
+            font-size: 1.5rem;
+        }
+
+        .contact-info h3::before {
+            content: "📧";
+            margin-right: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item strong {
+            color: #5b7cff;
         }
 
         /* Navigation */
         .nav-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin: 20px 0;
             color: #5b7cff;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #f8fafc;
         }
 
         .nav-link:hover {
             color: #4c63d2;
-            text-decoration: underline;
+            background: #e6f0ff;
+        }
+
+        .nav-link::before {
+            content: "←";
+            font-size: 1.2rem;
         }
 
         /* Footer */
         .footer {
-            background: #f8fafc;
-            color: #666;
-            padding: 30px 0;
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 40px 0;
             text-align: center;
-            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer a {
+            color: #5b7cff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #4c63d2;
+            text-decoration: underline;
         }
 
         /* Responsive */
@@ -137,24 +356,62 @@
             }
 
             .header {
-                padding: 30px 0;
+                padding: 40px 0;
             }
 
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .content {
                 padding: 40px 0;
             }
 
-            h2 {
+            .section-header h2 {
                 font-size: 1.5rem;
             }
 
-            h3 {
-                font-size: 1.2rem;
+            .quick-summary, .contact-info {
+                padding: 25px;
             }
+
+            .summary-points, .contact-grid, .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header:hover {
+                margin: 0 -15px;
+                padding: 20px 15px;
+            }
+        }
+
+        /* Scroll to top button - NEW */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #5b7cff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 1.2rem;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #4c63d2;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -163,109 +420,207 @@
     <header class="header">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p>TinyHabitsDaily</p>
+            <p>Your privacy matters to us at TinyHabitsDaily</p>
         </div>
     </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Privacy Policy</span>
+        </div>
+    </nav>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <h2 class="toc-title">Quick Navigation</h2>
+            <div class="toc-grid">
+                <div class="toc-column">
+                    <ul>
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#information-we-collect">2. Information We Collect</a></li>
+                        <li><a href="#how-we-use-info">3. How We Use Your Information</a></li>
+                        <li><a href="#data-storage">4. Data Storage and Security</a></li>
+                    </ul>
+                </div>
+                <div class="toc-column">
+                    <ul>
+                        <li><a href="#data-sharing">5. Data Sharing and Disclosure</a></li>
+                        <li><a href="#third-party">6. Third-Party Services</a></li>
+                        <li><a href="#your-rights">7. Your Rights and Choices</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Content -->
     <main class="content">
         <div class="container">
-            <a href="index.html" class="nav-link">← Back to Home</a>
+            <a href="index.html" class="nav-link">Back to Home</a>
             
             <div class="last-updated">
-                <strong>Last Updated:</strong> September 28, 2024
+                <div>
+                    <strong>Last Updated:</strong> September 28, 2024<br>
+                    <small>We regularly review and update our privacy practices</small>
+                </div>
             </div>
 
-            <h2>1. Introduction</h2>
-            <p>Welcome to TinyHabitsDaily ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience when using our mobile application. This Privacy Policy explains how we collect, use, and protect your information when you use the TinyHabitsDaily app.</p>
+            <!-- Quick Summary -->
+            <div class="quick-summary">
+                <h3>Privacy at a Glance</h3>
+                <p>Here's what you need to know about how we handle your data:</p>
+                <div class="summary-points">
+                    <div class="summary-point">Your habit data is stored locally on your device</div>
+                    <div class="summary-point">We don't sell your personal information</div>
+                    <div class="summary-point">You can delete your data anytime</div>
+                    <div class="summary-point">We use minimal analytics to improve the app</div>
+                    <div class="summary-point">Strong encryption protects your information</div>
+                    <div class="summary-point">We're transparent about data practices</div>
+                </div>
+            </div>
 
-            <h2>2. Information We Collect</h2>
-            
-            <h3>2.1 Information You Provide</h3>
-            <ul>
-                <li><strong>Habit Data:</strong> Information about your habits, goals, and progress that you enter into the app</li>
-                <li><strong>User Preferences:</strong> Settings and customizations you make within the app</li>
-                <li><strong>Feedback:</strong> Any feedback, comments, or suggestions you provide to us</li>
-            </ul>
+            <!-- Section 1 -->
+            <section id="introduction">
+                <div class="section-header" onclick="toggleSection('introduction')">
+                    <h2>1. Introduction</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>Welcome to TinyHabitsDaily ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience when using our mobile application. This Privacy Policy explains how we collect, use, and protect your information when you use the TinyHabitsDaily app.</p>
+                    <p>By using our app, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+                </div>
+            </section>
 
-            <h3>2.2 Automatically Collected Information</h3>
-            <ul>
-                <li><strong>Usage Analytics:</strong> Information about how you use the app, including features accessed and time spent</li>
-                <li><strong>Device Information:</strong> Device type, operating system version, and app version</li>
-                <li><strong>Crash Reports:</strong> Technical information when the app experiences errors or crashes</li>
-            </ul>
+            <!-- Section 2 -->
+            <section id="information-we-collect">
+                <div class="section-header" onclick="toggleSection('information-we-collect')">
+                    <h2>2. Information We Collect</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content large">
+                    <h3>2.1 Information You Provide</h3>
+                    <ul>
+                        <li><strong>Habit Data:</strong> Information about your habits, goals, and progress that you enter into the app</li>
+                        <li><strong>User Preferences:</strong> Settings and customizations you make within the app</li>
+                        <li><strong>Feedback:</strong> Any feedback, comments, or suggestions you provide to us</li>
+                    </ul>
 
-            <h2>3. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Provide and maintain the TinyHabitsDaily app functionality</li>
-                <li>Track your habit progress and provide personalized insights</li>
-                <li>Improve our app performance and user experience</li>
-                <li>Provide customer support and respond to your inquiries</li>
-                <li>Send you important updates about the app</li>
-                <li>Analyze usage patterns to enhance our services</li>
-            </ul>
+                    <h3>2.2 Automatically Collected Information</h3>
+                    <ul>
+                        <li><strong>Usage Analytics:</strong> Information about how you use the app, including features accessed and time spent</li>
+                        <li><strong>Device Information:</strong> Device type, operating system version, and app version</li>
+                        <li><strong>Crash Reports:</strong> Technical information when the app experiences errors or crashes</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2>4. Data Storage and Security</h2>
-            <p>Your habit data is primarily stored locally on your device. We implement appropriate security measures to protect your information, including:</p>
-            <ul>
-                <li>Encryption of sensitive data</li>
-                <li>Secure data transmission protocols</li>
-                <li>Regular security assessments and updates</li>
-                <li>Limited access to personal information by our team</li>
-            </ul>
+            <!-- Section 3 -->
+            <section id="how-we-use-info">
+                <div class="section-header" onclick="toggleSection('how-we-use-info')">
+                    <h2>3. How We Use Your Information</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide and maintain the TinyHabitsDaily app functionality</li>
+                        <li>Track your habit progress and provide personalized insights</li>
+                        <li>Improve our app performance and user experience</li>
+                        <li>Provide customer support and respond to your inquiries</li>
+                        <li>Send you important updates about the app</li>
+                        <li>Analyze usage patterns to enhance our services</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2>5. Data Sharing and Disclosure</h2>
-            <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
-            <ul>
-                <li><strong>With Your Consent:</strong> When you explicitly agree to share information</li>
-                <li><strong>Service Providers:</strong> With trusted third-party services that help us operate the app (such as analytics services)</li>
-                <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
-                <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets</li>
-            </ul>
+            <!-- Section 4 -->
+            <section id="data-storage">
+                <div class="section-header" onclick="toggleSection('data-storage')">
+                    <h2>4. Data Storage and Security</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>Your habit data is primarily stored locally on your device. We implement appropriate security measures to protect your information, including:</p>
+                    <ul>
+                        <li>Encryption of sensitive data</li>
+                        <li>Secure data transmission protocols</li>
+                        <li>Regular security assessments and updates</li>
+                        <li>Limited access to personal information by our team</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2>6. Third-Party Services</h2>
-            <p>Our app may use third-party services for analytics and crash reporting. These services have their own privacy policies:</p>
-            <ul>
-                <li>Apple Analytics (for iOS users)</li>
-                <li>Crash reporting services</li>
-            </ul>
-            <p>We encourage you to review the privacy policies of these third-party services.</p>
+            <!-- Section 5 -->
+            <section id="data-sharing">
+                <div class="section-header" onclick="toggleSection('data-sharing')">
+                    <h2>5. Data Sharing and Disclosure</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+                    <ul>
+                        <li><strong>With Your Consent:</strong> When you explicitly agree to share information</li>
+                        <li><strong>Service Providers:</strong> With trusted third-party services that help us operate the app (such as analytics services)</li>
+                        <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+                        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2>7. Your Rights and Choices</h2>
-            <p>You have the following rights regarding your personal information:</p>
-            <ul>
-                <li><strong>Access:</strong> You can access your habit data within the app</li>
-                <li><strong>Correction:</strong> You can modify or update your information at any time</li>
-                <li><strong>Deletion:</strong> You can delete your habits and data within the app</li>
-                <li><strong>Data Export:</strong> You can export your habit data from the app</li>
-                <li><strong>Opt-out:</strong> You can disable analytics in the app settings</li>
-            </ul>
+            <!-- Section 6 -->
+            <section id="third-party">
+                <div class="section-header" onclick="toggleSection('third-party')">
+                    <h2>6. Third-Party Services</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>Our app may use third-party services for analytics and crash reporting. These services have their own privacy policies:</p>
+                    <ul>
+                        <li>Apple Analytics (for iOS users)</li>
+                        <li>Crash reporting services</li>
+                    </ul>
+                    <p>We encourage you to review the privacy policies of these third-party services.</p>
+                </div>
+            </section>
 
-            <h2>8. Children's Privacy</h2>
-            <p>TinyHabitsDaily is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete that information.</p>
+            <!-- Section 7 -->
+            <section id="your-rights">
+                <div class="section-header" onclick="toggleSection('your-rights')">
+                    <h2>7. Your Rights and Choices</h2>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>You have the following rights regarding your personal information:</p>
+                    <ul>
+                        <li><strong>Access:</strong> You can access your habit data within the app</li>
+                        <li><strong>Correction:</strong> You can modify or update your information at any time</li>
+                        <li><strong>Deletion:</strong> You can delete your habits and data within the app</li>
+                        <li><strong>Data Export:</strong> You can export your habit data from the app</li>
+                        <li><strong>Opt-out:</strong> You can disable analytics in the app settings</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2>9. International Users</h2>
-            <p>If you are using TinyHabitsDaily from outside the United States, please note that your information may be transferred to, stored, and processed in the United States or other countries where our service providers are located.</p>
-
-            <h2>10. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. When we make changes, we will:</p>
-            <ul>
-                <li>Update the "Last Updated" date at the top of this policy</li>
-                <li>Notify users of significant changes through the app or email</li>
-                <li>Post the updated policy on our website</li>
-            </ul>
-            <p>Your continued use of the app after any changes constitutes acceptance of the updated Privacy Policy.</p>
-
-            <h2>11. Data Retention</h2>
-            <p>We retain your personal information only as long as necessary to provide you with our services and for legitimate business purposes. You can delete your data at any time through the app settings.</p>
-
-            <div class="contact-info">
+            <!-- Contact Section -->
+            <div class="contact-info" id="contact">
                 <h3>Contact Us</h3>
                 <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us:</p>
-                <p><strong>Email:</strong> privacy@tinyhabitsdaily.app</p>
-                <p><strong>Website:</strong> https://tinyhabitsdaily.app</p>
-                <p>We will respond to your inquiry within 30 days.</p>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Email:</strong> privacy@tinyhabitsdaily.app
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong> https://tinyhabitsdaily.app
+                    </div>
+                    <div class="contact-item">
+                        <strong>Response Time:</strong> Within 30 days
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -274,8 +629,71 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 TinyHabitsDaily. All rights reserved.</p>
-            <p><a href="index.html" style="color: #5b7cff; text-decoration: none;">Back to Home</a></p>
+            <p>
+                <a href="index.html">Back to Home</a>
+                <a href="mailto:support@tinyhabitsdaily.app">Support</a>
+                <a href="mailto:privacy@tinyhabitsdaily.app">Privacy Concerns</a>
+            </p>
         </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+    <script>
+        // Toggle sections - Collapsible functionality
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const content = section.querySelector('.section-content');
+            const toggle = section.querySelector('.section-toggle');
+            
+            content.classList.toggle('expanded');
+            toggle.classList.toggle('rotated');
+        }
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Expand the section if it's collapsed
+                        const content = targetElement.querySelector('.section-content');
+                        const toggle = targetElement.querySelector('.section-toggle');
+                        if (content && !content.classList.contains('expanded')) {
+                            content.classList.add('expanded');
+                            toggle.classList.add('rotated');
+                        }
+                        
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
